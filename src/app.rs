@@ -182,12 +182,10 @@ impl App {
     }
 
     pub fn current_notification(&self) -> Option<&str> {
-        if let Some((msg, time)) = &self.notification {
-            if time.elapsed() < Duration::from_secs(3) {
-                return Some(msg);
-            }
-        }
-        None
+        self.notification
+            .as_ref()
+            .filter(|(_, time)| time.elapsed() < Duration::from_secs(3))
+            .map(|(msg, _)| msg.as_str())
     }
 
     /// Tính tổng số mục tiêu còn nợ trên toàn bộ 4 chu kỳ
