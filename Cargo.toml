@@ -1,0 +1,17 @@
+[package]
+name = "task-cli"
+version = "0.1.0"
+edition = "2024"
+authors = ["khoatadev"]
+description = "A cross-platform terminal checkbox goal tracker with debt accumulation"
+readme = "README.md"
+license = "MIT"
+
+[dependencies]
+ratatui = "0.29"
+crossterm = "0.28"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+dirs = "5.0"
+uuid = { version = "1.10", features = ["v4", "serde"] }
