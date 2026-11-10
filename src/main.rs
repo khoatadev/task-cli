@@ -1,3 +1,6 @@
+pub mod models;
+pub mod storage;
+
 fn main() {
-    println!("Hello, world!");
+    println!("task-cli");
 }
